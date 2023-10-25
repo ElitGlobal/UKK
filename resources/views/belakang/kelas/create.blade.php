@@ -3,26 +3,26 @@
 @section('isi')
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fa-solid fa-chart-simple"></i> Daftar Tambah Mapel
+            <i class="fa-solid fa-chart-simple"></i> Daftar Tambah Kelas
         </div>
         <div class="card-body">
-            <form action="{{ route('prosesTambahDataJurusan') }}" method="POST">
+            <form action="{{ route('prosesTambahDataKelas') }}" method="POST">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input class="form-control @error('kode_mapel') is-invalid @enderror" type="number"
+                    <input class="form-control @error('kode_kelas') is-invalid @enderror" type="text" name="kode_kelas"
                         placeholder="Masukan Nama Kalian" />
-                    <label>Kode Mapel</label>
-                    @error('kode_mapel')
+                    <label>Kode Kelas</label>
+                    @error('kode_kelas')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control @error('nama_mapel') is-invalid @enderror" type="text"
-                        placeholder="Masukan NISN Kalian" />
-                    <label>Nama Mapel</label>
-                    @error('nama_mapel')
+                    <input class="form-control @error('jenjang_kelas') is-invalid @enderror" type="number"
+                        name="jenjang_kelas" placeholder="Masukan NISN Kalian" />
+                    <label>Jenjang Kelas</label>
+                    @error('jenjang_kelas')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>

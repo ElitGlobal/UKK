@@ -19,6 +19,14 @@
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                 Mapel
             </a>
+            <a class="nav-link" href="{{ route('dataKelas') }}">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                Kelas
+            </a>
+            <a class="nav-link" href="{{ route('dataJurusan') }}">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                Jurusan
+            </a>
         </div>
     </div>
     <div class="sb-sidenav-footer">

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mapels', function (Blueprint $table) {
+        Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_mapel');
-            $table->bigInteger('nama_mapel')->nullable()->default(12);
+            $table->string('kode_kelas');
+            $table->bigInteger('jenjang_kelas')->nullable()->default(12);
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mapels');
+        Schema::dropIfExists('kelas');
     }
 };

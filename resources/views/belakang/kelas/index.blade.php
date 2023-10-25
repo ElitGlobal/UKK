@@ -3,7 +3,7 @@
 @section('isi')
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ route('tambahDataMapel') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
+            <a href="{{ route('tambahDataKelas') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
                 Data</a>
         </div>
         <div class="card-body">
@@ -11,8 +11,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Mapel</th>
-                        <th>Nama Mapel</th>
+                        <th>Kode Kelas</th>
+                        <th>Jenjang Kelas</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -20,11 +20,12 @@
                     @php
                         $no = 1;
                     @endphp
-                    @forelse ($mapel as $m)
+
+                    @forelse ($kelas as $k)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $j->kode_mapel }}</td>
-                            <td>{{ $j->nama_mapel }}</td>
+                            <td>{{ $k->kode_kelas }}</td>
+                            <td>{{ $k->jenjang_kelas }}</td>
                             <td>
                                 <a href="" title="Edit" class="btn btn-secondary btn-sm"><i
                                         class="fa-solid fa-pencil"></i></a>

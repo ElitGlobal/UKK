@@ -5,6 +5,8 @@ use App\Http\Controllers\DepanController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\JurusanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +39,22 @@ Route::controller(SiswaController::class)->group(function(){
 Route::controller(MapelController::class)->group(function(){
     Route::get('/dataMapel', 'index')->name('dataMapel');
     Route::get('/tambahDataMapel', 'create')->name('tambahDataMapel');
+    Route::post('/prosesTambahDataMapel', 'store')->name('prosesTambahDataMapel');
 });
 
 Route::controller(GuruController::class)->group(function(){
     Route::get('/dataGuru', 'index')->name('dataGuru');
     Route::get('/tambahDataGuru', 'create')->name('tambahDataGuru');
+});
+
+Route::controller(KelasController::class)->group(function(){
+    Route::get('/dataKelas', 'index')->name('dataKelas');
+    Route::get('/tambahDataKelas', 'create')->name('tambahDataKelas');
+    Route::post('/prosesTambahDataKelas', 'store')->name('prosesTambahDataKelas');
+});
+
+Route::controller(JurusanController::class)->group(function(){
+    Route::get('/dataJurusan', 'index')->name('dataJurusan');
+    Route::get('/tambahDataJurusan', 'create')->name('tambahDataJurusan');
+    Route::post('/prosesTambahDataJurusan', 'store')->name('prosesTambahDataJurusan');
 });
