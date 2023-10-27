@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
             $table->string('kode_mapel');
-            $table->bigInteger('nama_mapel')->nullable()->default(12);
+            $table->string('nama_mapel')->nullable()->default(12);
             $table->timestamps();
         });
     }

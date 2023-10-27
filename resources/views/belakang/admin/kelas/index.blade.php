@@ -1,4 +1,4 @@
-@extends('belakang.layouts.main')
+@extends('belakang.admin.layouts.main')
 
 @section('isi')
     <div class="card mb-4">

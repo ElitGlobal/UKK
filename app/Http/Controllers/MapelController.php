@@ -13,24 +13,38 @@ class MapelController extends Controller
         return view('belakang.admin.mapel.index', compact('judul', 'mapel'));
     }
 
-    public function create(){
-        $judul = "Halaman Data Mapel";
-        return view('belakang.admin.mapel.create', compact('judul'));
-    }
-
     public function store(Request $request){
         $this->validate($request, [
             'kode_mapel' => 'required',
             'nama_mapel' => 'required',
-            'guru_pengampu' => 'required'
         ]);
 
-        Kelas::create([
+        Mapel::create([
             'kode_mapel' => $request->kode_mapel,
             'nama_mapel' => $request->nama_mapel,
-            'guru_pengampu' => $request->guru_pengampu
         ]);
 
-        return redirect()->route('dataMapel')->with(['success', 'Data Berhasil Disimpan!']);
+        return redirect()->route('dataMapel')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+
+    public function update(Request $request, $id){
+        $this->validate($request, [
+            'kode_mapel' => 'required',
+            'nama_mapel' => 'required',
+        ]);
+        $mapel = Mapel::findOrFail($id);
+
+        $mapel->update([
+            'kode_mapel' => $request->kode_mapel,
+            'nama_mapel' => $request->nama_mapel
+        ]);
+
+        return redirect()->route('dataMapel')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+
+    public function destroy($id){
+        $mapel = Mapel::findOrFail($id);
+        $mapel->delete();
+        return redirect()->route('dataMapel')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }
