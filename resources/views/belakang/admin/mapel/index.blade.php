@@ -1,9 +1,9 @@
-@extends('belakang.layouts.main')
+@extends('belakang.admin.layouts.main')
 
 @section('isi')
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ route('tambahDataJurusan') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
+            <a href="{{ route('tambahDataMapel') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
                 Data</a>
         </div>
         <div class="card-body">
@@ -11,21 +11,20 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Jurusan</th>
-                        <th>nama jurusan</th>
+                        <th>Kode Mapel</th>
+                        <th>Nama Mapel</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php
                         $no = 1;
-                    @endphp 
-
-                    @forelse ($jurusan as $j)
+                    @endphp
+                    @forelse ($mapel as $m)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $j->kode_jurusan }}</td>
-                            <td>{{ $j->nama_jurusan }}</td>
+                            <td>{{ $j->kode_mapel }}</td>
+                            <td>{{ $j->nama_mapel }}</td>
                             <td>
                                 <a href="" title="Edit" class="btn btn-secondary btn-sm"><i
                                         class="fa-solid fa-pencil"></i></a>

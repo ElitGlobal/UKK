@@ -10,12 +10,12 @@ class MapelController extends Controller
     public function index(){
         $judul = "Halaman Data Mapel";
         $mapel = Mapel::all();
-        return view('belakang.mapel.index', compact('judul', 'mapel'));
+        return view('belakang.admin.mapel.index', compact('judul', 'mapel'));
     }
 
     public function create(){
         $judul = "Halaman Data Mapel";
-        return view('belakang.mapel.create', compact('judul'));
+        return view('belakang.admin.mapel.create', compact('judul'));
     }
 
     public function store(Request $request){

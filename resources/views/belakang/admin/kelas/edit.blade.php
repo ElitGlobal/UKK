@@ -1,28 +1,29 @@
-@extends('belakang.layouts.main')
+@extends('belakang.admin.layouts.main')
 
 @section('isi')
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fa-solid fa-chart-simple"></i> Daftar Tambah Jurusan
+            <i class="fa-solid fa-chart-simple"></i> Daftar Edit Kelas
         </div>
         <div class="card-body">
-            <form action="{{ route('prosesTambahDataJurusan') }}" method="POST">
+            <form action="{{ route('prosesEditDataJurusan', $kelas->id) }}" method="POST">
                 @csrf
+                @method('put')
                 <div class="form-floating mb-3">
-                    <input class="form-control @error('kode_jurusan') is-invalid @enderror" type="text" name="kode_jurusan"
-                        placeholder="Masukan Nama Kalian" />
-                    <label>Kode Jurusan</label>
-                    @error('kode_jurusan')
+                    <input class="form-control @error('kode_kelas') is-invalid @enderror" type="text" name="kode_kelas"
+                        placeholder="Masukan Nama Kalian" value="{{ $kelas->kode_kelas }}" />
+                    <label>Kode Kelas</label>
+                    @error('kode_kelas')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control @error('nama_jurusan') is-invalid @enderror" type="text"
-                        name="nama_jurusan" placeholder="Masukan NISN Kalian" />
-                    <label>Nama Jurusan</label>
-                    @error('nama_jurusan')
+                    <input class="form-control @error('jenjang_kelas') is-invalid @enderror" type="number"
+                        name="jenjang_kelas" placeholder="Masukan NISN Kalian" value="{{ $kelas->jenjang_kelas }}" />
+                    <label>Jenjang Kelas</label>
+                    @error('jenjang_kelas')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>

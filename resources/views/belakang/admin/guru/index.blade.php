@@ -1,9 +1,9 @@
-@extends('belakang.layouts.main')
+@extends('belakang.admin.layouts.main')
 
 @section('isi')
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ route('tambahDataSiswa') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
+            <a href="{{ route('tambahDataGuru') }}" class="btn btn-outline-success"><i class="fas fa-plus me-1"></i> Tambah
                 Data</a>
         </div>
         <div class="card-body">

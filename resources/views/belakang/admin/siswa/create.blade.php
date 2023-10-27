@@ -18,9 +18,11 @@
                 <div class="form-floating mb-3">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Pilih Kelas</option>
-                        <option value="10">Sepuluh</option>
-                        <option value="11">Sebelas</option>
-                        <option value="12">Dua Belas</option>
+                        @forelse ($kelas as $k)
+                            <option value="{{ $k->jenjang_kelas }}">{{ $k->jenjang_kelas }}</option>
+                        @empty
+                            <option selected>Belum Tersedia Data Kelas</option>
+                        @endforelse
                     </select>
                     <label>Kelas</label>
                 </div>

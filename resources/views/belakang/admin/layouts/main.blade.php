@@ -16,10 +16,10 @@
 </head>
 
 <body class="sb-nav-fixed">
-    @include('belakang.layouts.nav')
+    @include('belakang.admin.layouts.nav')
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            @include('belakang.layouts.sidebar')
+            @include('belakang.admin.layouts.sidebar')
         </div>
         <div id="layoutSidenav_content">
             <main>
@@ -36,9 +36,14 @@
                     </div>
                 </div>
             </main>
-            @include('belakang.layouts.footer')
+            @include('belakang.admin.layouts.footer')
         </div>
     </div>
+    @stack('modalTambah')
+    @stack('modalLihat')
+    @stack('modalEdit')
+    @stack('modalHapus')
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="{{ asset('template/js/scripts.js') }}"></script>
